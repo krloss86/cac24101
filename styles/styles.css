@@ -1,40 +1,118 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');*/
+
+:root {
+    /*defino la variable*/
+   --rojo: #9f3647; 
+   --texto-blanco: #ffffff;
+    /*2em => 2 * 16px = 32px;*/
+
+}
+
 /*selector universal*/
 * {
-    font-family: Verdana, Geneva;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;   
+    margin: 0;
+}
+.ubuntu-light {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
-/*selector de tipo (tag)*/   
-h1 {
-    color: red !important;
-}   
-
-/*selector de clase*/
-.colorVerde {
-    color: green;
+.ubuntu-regular {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-/*selector de id*/
-#colorNegro {
-    color: blueviolet;
+.ubuntu-medium {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
+
+.ubuntu-bold {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ubuntu-light-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.ubuntu-regular-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ubuntu-medium-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.ubuntu-bold-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
 /*especifidad
     inline > id > clase > tipo
     !important 
 */
-
-.main {
-    text-align: center;
-    background-image: url(../imgs/banner-bg.jpg);
-    /*background-position: ;
-    background-repeat: ;
-    background-size: ;*/
-    
-    /*TPH!!!*/
+.texto-blanco {
+    color: var(--texto-blanco);
 }
-.main_btn_registrarse{
+.main {
+    background-image: linear-gradient(to right top, #0000008a, #0000008a), url(../imgs/banner-bg.jpg);
+    /*background-attachment: fixed; *//* tph*/
+    height: 90vh; /*vh altura relativa*/
+    width: 100vw; /*vw ancho relativo*/
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    
+    min-height: 400px;
+}
+.main_titulo {
+    padding-top: 20vh;
+    padding-bottom: 5vh;
+    font-size: 3rem; /*rem|em unidad de medida relativa ¿a qué?*/
+}
+.main_subtitulo {
+    margin-bottom: 5vh;
+}
+.main_btn_registrarse {
     text-decoration: none;
     padding: 15px; /*espacio desde el borde hacia dentro*/
-    background-color: rgb(178, 17, 17);
-    color: white;
-    border-radius: 10px;
+    background-color: var(--rojo);
+    color: var(--texto-blanco);
+    border-radius: 5px;    
+}
+
+.header {
+    background-color:aquamarine ;
+}
+.header_logo {
+    height: 5vh;
+    display: inline-block;    
+    width: 45vw;
+} 
+.header_menu {
+    height: 10vh;
+    display: inline-block;
+    width: 45vw;
+    padding-top: 2vh ;
+} 
+.header_menu a {
+    padding-left: 1vw;
+    padding-right: 1vw;
+    text-decoration: none;
 }
