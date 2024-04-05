@@ -1,0 +1,9 @@
+:root {
+    --rojo: #9f8336; 
+  }
+  .header {
+    justify-content: flex-start;
+  }
+  .header_menu {
+    display: none;
+  }

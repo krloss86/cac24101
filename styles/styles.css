@@ -1,13 +1,6 @@
 /*@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');*/
 
-:root {
-    /*defino la variable*/
-   --rojo: #9f3647; 
-   --texto-blanco: #ffffff;
-    /*2em => 2 * 16px = 32px;*/
-
-}
-
+@import url(./sitio-b.css);
 /*selector universal*/
 * {
     font-family: "Ubuntu", sans-serif;
@@ -70,6 +63,7 @@
 .texto-blanco {
     color: var(--texto-blanco);
 }
+
 .main {
     background-image: linear-gradient(to right top, #0000008a, #0000008a), url(../imgs/banner-bg.jpg);
     /*background-attachment: fixed; *//* tph*/
@@ -80,6 +74,9 @@
     text-align: center;
     
     min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .main_titulo {
     padding-top: 20vh;
@@ -95,24 +92,175 @@
     background-color: var(--rojo);
     color: var(--texto-blanco);
     border-radius: 5px;    
+    width: 20vw;
 }
 
 .header {
-    background-color:aquamarine ;
+    background-color:var(--rojo) ;
+    padding-top: 1vh;
+    padding-left: 3vw;
+    height: 9vh;
+    min-height: 50px;
+    /*agrego flexbox*/
+    display: flex;
+    justify-content: center; /*main axis*/
+    align-items: center;
 }
 .header_logo {
     height: 5vh;
-    display: inline-block;    
-    width: 45vw;
+    /*display: inline-block;*/
+    width: 20vw;
 } 
+.header_logo_link {
+  text-decoration: none;
+  color: var(--texto-blanco);
+}
+
 .header_menu {
-    height: 10vh;
-    display: inline-block;
-    width: 45vw;
-    padding-top: 2vh ;
+    height: 10vh;/*relativo > */
+    /*display: inline-block;*/
+    display: flex;
+    width: 78vw;
+    /*padding-top: 2vh ;*/
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 5vw;
 } 
 .header_menu a {
     padding-left: 1vw;
     padding-right: 1vw;
     text-decoration: none;
+    color: var(--texto-blanco);
 }
+
+#header_menu_login {
+  padding: 1vh;
+  background: black;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/*formulario de busqueda*/
+.busqueda {
+  /*margin: 0 auto; despues los usamos para centrar otra cosa*/
+  text-align: center;
+  height: 50vh;
+  background-color: var(--fondo-negro);
+  color:var(--texto-blanco);
+  padding-top: 10vh;
+  font-size: 1.5rem;
+  /*border: 1px solid red;*/
+
+  display: flex;
+  flex-direction: column;
+}
+
+/*SELECTORES AVANZADOS*/
+/*1 - hijos directos: >*/
+/*2 - hermano adyacente: + */
+/*3 - descendiente */
+.busqueda > h2 + form {
+  padding-top: 6vh;
+}
+
+/*
+.busqueda form {
+  padding-top: 5vh;
+}
+
+#busqueda_form {
+  padding-top: 5vh;
+}
+
+form {
+  padding-top: 5vh;
+}
+*/
+
+/*.busqueda form input{
+  padding: 1vh;
+}*/
+.input_seach {
+  padding: 2vh 3vh;
+  border-radius: 25px;
+  border: none;
+
+  text-transform: capitalize;
+  width: 50vw;
+  /*tph: sacar borde cuando hago foco en el input*/
+}
+
+.button_search {
+  padding: 1.5vh 3vh;
+  border-radius: 25px;
+  border: 2px solid var(--texto-blanco);
+  background-color: var(--rojo);
+  color: var(--texto-blanco);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.button_search:hover {
+  font-size: 1.1rem;
+}
+
+hr {
+  margin: 0 auto; /*despues lo usamos para centrar otra cosa*/
+  margin-top: 20vh ;
+  width: 75vw;
+  border: 0.5px solid var(--rojo);
+ }
+
+ .elemento_fijo {
+  position: fixed;
+  bottom:5vh;
+  right:5vw;
+  color:var(--rojo);
+ }
+
+ .flex-container {
+  height: 20vh;
+  background-color: aqua;
+  display: flex;
+  flex-direction: row;/*row|row-reverse|column|column-reverse*/
+  justify-content:space-around; /*main axis*/
+  flex-wrap: wrap;
+ }
+ .flex-container div {
+    width: 100px;
+ }
+
+ /*media query para impresion*/
+ @media print {
+  /*todo lo que ponga aca se ejecuta cuando voy a imprimir!!*/
+  :root {
+    --rojo: #3f9f36; 
+  }
+  .main {
+    display: none;
+  }
+  /*jueguen!!*/
+ }
+
+ /*media query*/
+ @media screen and (min-width: 800px) and (max-width: 900px) {
+ /*@media (max-width:400px) and (min-width:900px) */
+  /*@import url(styles-800-900.css);*/
+  /*TPH: carga de css en media*/
+  :root {
+    --rojo: #9f8336; 
+  }
+  .header {
+    justify-content: flex-start;
+  }
+  .header_menu {
+    display: none;
+  }
+
+ }
+
+ @media screen and (min-width: 900px) and (max-width: 1200px) {
+  :root {
+    --rojo: #369f9f; 
+  }
+ }

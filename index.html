@@ -23,7 +23,7 @@
     <body>
         <header class="header">
             <div class="header_logo">
-                <a href="#" class="header_logo">
+                <a href="#" class="header_logo_link">
                     <i class="fa-solid fa-film"></i>
                     Cac-movies
                 </a>
@@ -31,7 +31,9 @@
             <div class="header_menu">
                 <a href="Tendencias">Tendencias</a>
                 <a href="Registrarse">Registrarse</a>
-                <a href="Iniciar Sesión">Iniciar Sesión</a>
+                <a href="Iniciar Sesión" id="header_menu_login">
+                    Iniciar Sesión
+                </a>
             </div>
         </header>
 
@@ -47,8 +49,23 @@
                     Registrarse
                 </a>
             </section>
+            <section class="busqueda">                
+                <h2>¿Qué estas buscando para ver?</h2>
+                <form class="busqueda_form" id="busqueda_form">
+                    <input type="search" 
+                        placeholder="buscar..." 
+                        class="input_seach"
+                    >
+                    <button class="button_search">
+                        Buscar
+                    </button>
+                </form>
+                <hr>
+            </section>            
         </main>
-
+        <a class="elemento_fijo" href="#">
+            <i class="fa fa-circle-up"></i>
+        </a>
         <script src="https://kit.fontawesome.com/181725805d.js" crossorigin="anonymous"></script>
     </body>
 </html>
