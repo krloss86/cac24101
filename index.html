@@ -31,7 +31,8 @@
             <div class="header_menu">
                 <a href="Tendencias">Tendencias</a>
                 <a href="Registrarse">Registrarse</a>
-                <a href="Iniciar Sesión" id="header_menu_login">
+                <a href="Iniciar Sesión" 
+                    id="header_menu_login">
                     Iniciar Sesión
                 </a>
             </div>
@@ -55,9 +56,13 @@
                     <input type="search" 
                         placeholder="buscar..." 
                         class="input_seach"
+                        id="txt"
                     >
-                    <button class="button_search">
-                        Buscar
+                    <button 
+                        type="button"
+                        class="button_search"
+                        id="btnBuscar">
+                        Buscar                        
                     </button>
                 </form>
                 <hr>
@@ -67,5 +72,7 @@
             <i class="fa fa-circle-up"></i>
         </a>
         <script src="https://kit.fontawesome.com/181725805d.js" crossorigin="anonymous"></script>
+        <!--antes de que cierre el body-->
+        <script src="./js/holamundo.js"></script>
     </body>
 </html>
