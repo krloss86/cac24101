@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div>
+        <input id="claveBusqueda" value="Algo">
+        <button id="btnBuscar">
+            Buscar
+        </button>
+    </div>
+    <h3 id="textoBuscado"></h3>
+    <hr>
+    <div>
+        <input id="valor1" 
+            type="number" 
+            value="">
+        <input id="valor2" 
+            type="number" 
+            value="">
+        <select id="operacion">
+            <option value="+">+</option>
+            <option value="+">-</option>
+            <option value="+">*</option>
+            <option value="+">/</option>
+        </select>
+        <label id="resultado"></label>
+        <button id="btnBuscar">
+            Calcular
+        </button>
+    </div>
+
+    <script>
+        //scope de una variable
+        //aca voy a tomar el input que esta en el html
+        const inputEnELHTML = document.getElementById('claveBusqueda');
+
+        //arriba de todo va mi fucion
+        function buscar () {
+            //1) tomar el h3 de html
+            const h3EnHTML = document.getElementById('textoBuscado');
+
+            //2) actualizar el value con texto capturado del input
+            h3EnHTML.innerText = inputEnELHTML.value;
+        }
+
+        const boton = document.getElementById('btnBuscar');
+
+        boton.addEventListener('click', buscar);//dos parametros
+
+        //asigno otro evento: 
+        inputEnELHTML.addEventListener('keypress', buscar);
+        inputEnELHTML.addEventListener('keydown', buscar);
+        //tph: ver que otros eventos hay!!!
+    </script>
+</body>
+</html>
