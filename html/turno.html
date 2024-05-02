@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .botonera-container {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Turnero</h1>
+    </header>
+    <main>
+        <section>
+            <h3>Elija su Turno</h3>
+            <div class="botonera-container">
+                <button onclick="sacarTurno('os')">
+                    Obra Social
+                </button>
+                <button onclick="sacarTurno('pre')">
+                    Prepaga
+                </button>
+                <button onclick="sacarTurno('par')">
+                    Particular
+                </button>
+            </div>
+        </section>
+        <section>
+            <h4>Listado de turnos</h4>
+            <ul id="turnos">                
+            </ul>
+        </section>
+    </main>
+    <script src="../js/turno.js"></script>
+</body>
+</html>

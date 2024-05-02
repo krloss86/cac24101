@@ -33,7 +33,18 @@
             Calcular
         </button>
     </div>
-
+    <hr>
+    <section>
+        <input type="number" 
+            id="valorA">
+        <input type="number" 
+            id="valorB">
+        <button id="btnCalcularTipo"
+            onclick="calcular()">
+            Calcular
+        </button>
+        <span id="comparacion"></span>
+    </section>
     <script>
         //scope de una variable
         //aca voy a tomar el input que esta en el html
@@ -57,5 +68,6 @@
         inputEnELHTML.addEventListener('keydown', buscar);
         //tph: ver que otros eventos hay!!!
     </script>
+    <script src="../js/tipos.js"></script>
 </body>
 </html>
