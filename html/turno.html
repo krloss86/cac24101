@@ -19,6 +19,10 @@
         <section>
             <h3>Elija su Turno</h3>
             <div class="botonera-container">
+                <div >
+                    <label for="dni">DNI</label>
+                    <input type="tel" id="dni">
+                </div>
                 <button onclick="sacarTurno('os')">
                     Obra Social
                 </button>
@@ -30,9 +34,15 @@
                 </button>
             </div>
         </section>
+        <hr/>
         <section>
-            <h4>Listado de turnos</h4>
+            <h4>En espera</h4>
             <ul id="turnos">                
+            </ul>
+        </section>
+        <section>
+            <h4>Atendidos</h4>
+            <ul id="atendidos">                
             </ul>
         </section>
     </main>
