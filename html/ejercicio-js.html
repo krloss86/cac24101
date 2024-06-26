@@ -6,6 +6,30 @@
     <title>Document</title>
 </head>
 <body>
+
+    <fieldset>
+        <legend>CRUD</legend>
+        <div>
+            <label>Nombre</label>
+            <input id="nombre">
+            <label>Apellido</label>
+            <input id="apellido">
+            <label>Email</label>
+            <input id="email">
+            <label>Tipo Cliente</label>
+            <select id="tipoCliente">
+                <option value="1">Bronce</option>
+                <option value="2">Plata</option>
+                <option value="3">Oro</option>
+            </select>
+            <hr>
+            <button id="btnCrear"
+                onclick="crear()">
+                Crear
+            </button>
+        </div>
+    </fieldset>
+
     <button onclick="ingresarNumero()">
         Ingresar Valor
     </button>

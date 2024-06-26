@@ -38,12 +38,38 @@ function leerNumero() {
     return numero;
 }
 //do-while
+function crear() {
+    const nombre = document.getElementById('nombre').value;
+    const apellido = document.getElementById('apellido').value;
+    const email = document.getElementById('email').value;
+    const tipoClienteId = document.getElementById('tipoCliente').value;
 
+    console.log(nombre,apellido,email,tipoClienteId)
+
+    const jsonRequest = {
+        nombre, 
+        apellido,
+        email,
+        tipoClienteId
+    };
+
+    const jsonText = JSON.stringify(jsonRequest);
+
+    fetch('http://localhost:8080/webapp/CrearMovieController',{
+        method:'post',
+        body: jsonText,
+        headers:{
+            'Content-Type':'text/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => console.log(data));
+}
 
 function invocarAPI() {
     //desactivar
     document.getElementById('api').style.display = 'none';
-    fetch('https://reqres.in/api/users?page=1')
+    fetch('http://localhost:8080/webapp/ListarMoviesController')
     .then(response => response.json())
     .then(data => {
         Filas(data.data)
