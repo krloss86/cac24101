@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../js/auth.js"></script>
+    <script>
+        isLogged();
+    </script>
 </head>
 <body>
-
+    <button onclick="logout()"
+         id="btnSalir">
+        Salir
+    </button>
     <fieldset>
         <legend>CRUD</legend>
         <div>
@@ -25,8 +32,9 @@
             <hr>
             <button id="btnCrear"
                 onclick="crear()">
-                Crear
+                Guardar
             </button>
+            <input type="hidden" id="id">
         </div>
     </fieldset>
     <hr/>
@@ -49,6 +57,6 @@
             
         </tbody>
     </table>
-    <script src="../js/ejercicio-js.js"></script>
+    <script src="../js/crud.js"></script>
 </body>
 </html>

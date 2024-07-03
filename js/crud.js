@@ -1,12 +1,31 @@
+let lista = [];
+
+function limpiar() {
+    document.getElementById('nombre').value = '';
+    document.getElementById('apellido').value = ''
+    document.getElementById('email').value = ''
+    document.getElementById('tipoCliente').value = ''
+    //guardo el id del registro que quiero editar
+    document.getElementById('id').value = '';
+}
+
 function crear() {
     const nombre = document.getElementById('nombre').value;
     const apellido = document.getElementById('apellido').value;
     const email = document.getElementById('email').value;
     const tipoClienteId = document.getElementById('tipoCliente').value;
 
+    const id = document.getElementById('id').value;
+
     console.log(nombre,apellido,email,tipoClienteId)
+    if(!nombre || !apellido || !email || !tipoClienteId) {
+        alert('Complete todos los campos')
+        return;
+    }
+    
 
     const jsonRequest = {
+        id,
         nombre, 
         apellido,
         email,
@@ -14,8 +33,8 @@ function crear() {
     };
 
     const jsonText = JSON.stringify(jsonRequest);
-
-    fetch('http://localhost:8080/webapp/CrearMovieController',{
+    const endpoint = id ? 'ModificarMovieController' : 'CrearMovieController';
+    fetch(`http://localhost:8080/webapp/${endpoint}`,{
         method:'post',
         body: jsonText,
         headers:{
@@ -23,8 +42,10 @@ function crear() {
         }
     })
     .then(response => console.log(response))
-    .then(data => 
+    .then(data => {
+        limpiar();
         listar()
+    }
     );
 }
 
@@ -37,6 +58,7 @@ function listar() {
         Filas(data)
         //activo boton
         document.getElementById('api').style.display = '';
+        lista = data;
     });
 }
 function Filas(filas) {
@@ -53,6 +75,16 @@ function eliminar(id) {
         }).then(response => listar());
     }
 }
+function editar(id) {
+    const fila = lista.find(l => l.id === id);
+    
+    document.getElementById('nombre').value = fila.nombre;
+    document.getElementById('apellido').value = fila.apellido;
+    document.getElementById('email').value = fila.email;
+    document.getElementById('tipoCliente').value = fila.tipoClienteId;
+    //guardo el id del registro que quiero editar
+    document.getElementById('id').value = fila.id;
+}
 
 function Fila(obj) {
     return `
@@ -66,6 +98,7 @@ function Fila(obj) {
             </td>
             <td>
                 <a href="#" onclick="eliminar(${obj.id})">X</a>
+                <a href="#" onclick="editar(${obj.id})">E</a>
             </td>
         </tr>
     `
