@@ -50,14 +50,10 @@ function crear() {
 }
 
 function listar() {
-    //desactivar
-    document.getElementById('api').style.display = 'none';
     fetch('http://localhost:8080/webapp/ListarMoviesController')
     .then(response => response.json())
     .then(data => {
         Filas(data)
-        //activo boton
-        document.getElementById('api').style.display = '';
         lista = data;
     });
 }

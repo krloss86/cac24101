@@ -3,30 +3,30 @@ function login() {
     const password =  document.getElementById('password').value;
 
     const req = {
-        email: usuario,
+        username: usuario,
         password: password
     };
 
     //simular enviar al server los datos
     //reqres 
-    fetch('https://reqres.in/api/login',{
+    //fetch('https://reqres.in/api/login',{
+    fetch('http://localhost:8080/webapp/api/login',{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(req)
     })
-    .then(response => response.json())
+    .then(response => console.log(response))
     .then(data => {
-        if(!data.error) {
-            //guardar en localStorage
-            localStorage.setItem('USUARIO', data.token);
+        //guardar en localStorage
+        localStorage.setItem('USUARIO', usuario);
 
-            //abm/crud
-            window.location.href = './crud.html';
-        }else {
-            alert(data.error);
-        }
+        //abm/crud
+        window.location.href = './crud.html';
+        
+    }).catch(err => {
+        console.log(err)
     });
     
 }
